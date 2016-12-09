@@ -7,8 +7,6 @@ const bodyParser = require('body-parser')
 
 const app = express()
 
-require('./epilogue-initialize')(app)
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
@@ -25,6 +23,20 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }))
 app.use(express.static(path.join(__dirname, 'public')))
+
+require('./epilogue-initialize')(app)
+
+app.get('/b', (req, res) => {
+  res.render('b', { title: 'Банки' })
+})
+
+app.get('/k', (req, res) => {
+  res.render('k', { title: 'Кекви' })
+})
+
+app.get('/e', (req, res) => {
+  res.render('e', { title: 'Кошториси' })
+})
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
