@@ -5,10 +5,13 @@ const logger = require('morgan')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 
+const routes = require('./app_server/routes/index')
+const routesApi = require('./app_api/routes/index')
+
 const app = express()
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'app_server', 'views'))
 app.set('view engine', 'pug')
 
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
@@ -24,19 +27,10 @@ app.use(require('node-sass-middleware')({
 }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-require('./epilogue-initialize')(app)
+// app.use('/', routes)
+app.use('/api', routesApi)
 
-app.get('/b', (req, res) => {
-  res.render('b', { title: 'Банки' })
-})
-
-app.get('/k', (req, res) => {
-  res.render('k', { title: 'Кекви' })
-})
-
-app.get('/e', (req, res) => {
-  res.render('e', { title: 'Кошториси' })
-})
+require('./app_api/epilogue-initialize')(app)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

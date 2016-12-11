@@ -4,7 +4,8 @@ module.exports = function (app) {
 
   epilogue.initialize({
     app: app,
-    sequelize: db.sequelize
+    sequelize: db.sequelize,
+    base: '/api'
   })
 
   epilogue.resource({
