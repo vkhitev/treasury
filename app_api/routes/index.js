@@ -1,14 +1,13 @@
-var express = require('express')
-var router = express.Router()
+const { Router } = require('express')
+const router = Router()
 
-const db = require('../models')
+const controller = require('../controllers/mainController')
 
-/* GET home page. */
-router.get('/', function (req, res, next) {
-  // res.render('index', { title: 'Express' })
-  db.Kekv.findAll().then((result) => {
-    res.send(result)
-  })
-})
+router.get('/institutions_by_bank/:bankid', controller.institutionsByBank)
+
+router.get('/money_spent', controller.moneySpent)
+router.get('/institutions_years_working', controller.institutionYearsWorking)
+router.get('/payment_orders_nice', controller.paymentOrdersNice)
+router.get('/rest_estimates', controller.restEstimates)
 
 module.exports = router

@@ -6,39 +6,45 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      field: 'id'
     },
-    institution_id: {
+    institutionId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
         model: 'institution',
         key: 'id'
-      }
+      },
+      field: 'institution_id'
     },
-    kekv_id: {
+    kekvId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
         model: 'kekv',
         key: 'id'
-      }
+      },
+      field: 'kekv_id'
     },
-    bank_id: {
+    bankId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
         model: 'bank',
         key: 'id'
-      }
+      },
+      field: 'bank_id'
     },
     money: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
+      field: 'money'
     },
-    order_date: {
+    orderDate: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: false,
+      field: 'order_date'
     }
   }, {
     tableName: 'payment_order'

@@ -6,31 +6,36 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      field: 'id'
     },
-    kekv_id: {
+    kekvId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
         model: 'kekv',
         key: 'id'
-      }
+      },
+      field: 'kekv_id'
     },
-    institution_id: {
+    institutionId: {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       references: {
         model: 'institution',
         key: 'id'
-      }
+      },
+      field: 'institution_id'
     },
-    money_limit: {
+    limit: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
+      field: 'limit'
     },
     year: {
       type: DataTypes.INTEGER(11),
-      allowNull: false
+      allowNull: false,
+      field: 'year'
     }
   }, {
     tableName: 'estimate'

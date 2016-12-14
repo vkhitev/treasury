@@ -27,7 +27,7 @@ app.use(require('node-sass-middleware')({
 }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.use('/', routes)
+app.use('/', routes)
 app.use('/api', routesApi)
 
 require('./app_api/epilogue-initialize')(app)

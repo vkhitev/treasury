@@ -6,11 +6,13 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER(11),
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
+      field: 'id'
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      field: 'name'
     }
   }, {
     tableName: 'bank'
