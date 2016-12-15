@@ -26,11 +26,18 @@ module.exports = function (sequelize, DataTypes) {
     },
     money_limit: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 0
+      }
     },
     year: {
       type: DataTypes.INTEGER(11),
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 1991,
+        max: 2100
+      }
     }
   }, {
     tableName: 'estimate'

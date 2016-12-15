@@ -26,9 +26,6 @@ $(document).ready(function () {
           }
           output[input instanceof Array ? 'Records' : 'Record'] = input
 
-          console.log('input', input)
-          console.log('output', output)
-
           if (callback) {
             callback(output)
           }

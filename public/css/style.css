@@ -1,12 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #f0eaea; }
+.ui-dialog-titlebar-close {
+  background: url("./jtable/metro/close.png");
+  width: 16px;
+  height: 16px;
+  opacity: 0.4; }
 
-a {
-  color: #00B7FF; }
+.ui-dialog-titlebar-close:hover {
+  opacity: 0.7; }
 
-#FuckingTable {
-  width: 80%; }
+.ui-dialog {
+  z-index: 1051; }
+
+.jtable-bottom-panel select {
+  color: black; }
 
 /*# sourceMappingURL=style.css.map */

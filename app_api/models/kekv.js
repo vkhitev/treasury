@@ -10,7 +10,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     code: {
       type: DataTypes.INTEGER(11),
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: 4
+      }
     },
     description: {
       type: DataTypes.TEXT,

@@ -34,7 +34,10 @@ module.exports = function (sequelize, DataTypes) {
     },
     money: {
       type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        min: 0
+      }
     },
     order_date: {
       type: DataTypes.DATE,
