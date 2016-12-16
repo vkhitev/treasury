@@ -306,7 +306,7 @@
     },
     payment_orders_nice: {
       id: '#payment_orders_nice_table',
-      title: 'Витрати коштів',
+      title: 'Платіжні доручення',
       ajaxSettings: ajaxSettings,
       paging: true,
       pageSize: 20,
