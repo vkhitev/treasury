@@ -14,8 +14,7 @@ function findBadDates (...dates) {
   for (let date of dates) {
     if (date && !validateDate(date)) {
       return {
-        // error: 'Wrong date passed. Must be less than 1900-01-01',
-        error: 'Не мучай',
+        error: 'Wrong date passed. Must be less than 1900-01-01',
         value: date
       }
     }
@@ -57,28 +56,43 @@ function institutionsByBank (req, res, next) {
     })
 }
 
+function sortPageSearch (req) {
+  const sort = req.query.sort
+  let order = null
+  if (sort && !sort.startsWith('-')) {
+    order = `${sort} ASC`
+  } else if (sort) {
+    order = `${sort.replace('-', '')} DESC`
+  }
+  return {
+    limit: +req.query.count || 1000,
+    offset: +req.query.offset || 0,
+    order: order
+  }
+}
+
 function moneySpent (req, res, next) {
-  db.MoneySpent.findAll({
+  db.MoneySpent.findAll(Object.assign({
     attributes: ['institution_name', 'money_spent', 'years_working']
-  }).then(res.send.bind(res))
+  }, sortPageSearch(req))).then(res.send.bind(res))
 }
 
 function institutionYearsWorking (req, res, next) {
-  db.InstitutionYearsWorking.findAll({
+  db.InstitutionYearsWorking.findAll(Object.assign({
     attributes: ['institution_name', 'years_working']
-  }).then(res.send.bind(res))
+  }, sortPageSearch(req))).then(res.send.bind(res))
 }
 
 function paymentOrdersNice (req, res, next) {
-  db.PaymentOrders.findAll({
+  db.PaymentOrders.findAll(Object.assign({
     attributes: ['institution_name', 'money', 'order_date', 'kekv_code', 'bank_name']
-  }).then(res.send.bind(res))
+  }, sortPageSearch(req))).then(res.send.bind(res))
 }
 
 function restEstimates (req, res, next) {
-  db.RestEstimates.findAll({
+  db.RestEstimates.findAll(Object.assign({
     attributes: ['institution_name', 'kekv_code', 'year', 'rest']
-  }).then(res.send.bind(res))
+  }, sortPageSearch(req))).then(res.send.bind(res))
 }
 
 exports.institutionsByBank = institutionsByBank

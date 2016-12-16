@@ -97,7 +97,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2>Таблиці</h2>
+          <h2>Звичайні таблиці</h2>
           <hr class="star-primary">
         </div>
       </div>
@@ -154,7 +154,69 @@
         </div>
         <div class="col-sm-4 portfolio-item">
           <div class="portfolio-link">
-            <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+            <img src="img/portfolio/WOW1.png" class="img-responsive" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2>Круті таблиці</h2>
+          <hr class="star-primary">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 portfolio-item">
+          <a href="#modal_payment_orders_nice" class="portfolio-link" data-toggle="modal" onclick="loadTable('#payment_orders_nice_table')">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="img/portfolio/payment_orders_nice.png" class="img-responsive" alt="">
+          </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+          <a href="#modal_rest_estimates" class="portfolio-link" data-toggle="modal" onclick="loadTable('#rest_estimates_table')">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="img/portfolio/rest_estimates.png" class="img-responsive" alt="">
+          </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+          <a href="#modal_money_spent" class="portfolio-link" data-toggle="modal" onclick="loadTable('#money_spent_table')">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="img/portfolio/money_spent.png" class="img-responsive" alt="">
+          </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+          <a href="#modal_institution_years_working" class="portfolio-link" data-toggle="modal" onclick="loadTable('#institution_years_working_table')">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="img/portfolio/institution_years_working.png" class="img-responsive" alt="">
+          </a>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+          <div class="portfolio-link">
+            <img src="img/portfolio/WOW2.png" class="img-responsive" alt="">
+          </div>
+        </div>
+        <div class="col-sm-4 portfolio-item">
+          <div class="portfolio-link">
+            <img src="img/portfolio/WOW3.png" class="img-responsive" alt="">
           </div>
         </div>
       </div>
@@ -407,7 +469,8 @@
       </div>
     </div>
   </div>
-  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+
+  <div class="portfolio-modal modal fade" id="modal_payment_orders_nice" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
         <div class="lr">
@@ -419,9 +482,78 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2">
             <div class="modal-body">
-              <h2>Інститути</h2>
+              <h2>Платіжні доручення</h2>
               <hr class="star-primary">
-              <div id="institutions_table"></div>
+              <div id="payment_orders_nice_table"></div>
+              <br />
+              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="modal_rest_estimates" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Залишки грошей у кошторисах в розрізі КЕКВів</h2>
+              <hr class="star-primary">
+              <div id="rest_estimates_table"></div>
+              <br />
+              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="modal_money_spent" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Витрати грошей установами</h2>
+              <hr class="star-primary">
+              <div id="money_spent_table"></div>
+              <br />
+              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="portfolio-modal modal fade" id="modal_institution_years_working" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Тривалість роботи установ</h2>
+              <hr class="star-primary">
+              <div id="institution_years_working_table"></div>
               <br />
               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
             </div>

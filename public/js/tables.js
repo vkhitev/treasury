@@ -122,9 +122,6 @@
       pageSize: 20,
       sorting: true,
       defaultSorting: 'name asc',
-      selecting: true,
-      multiselect: true,
-      selectingCheckboxes: true,
       actions: {
         listAction: 'GET>/api/institutions/',
         createAction: 'POST>/api/institutions/',
@@ -158,9 +155,6 @@
       pageSize: 20,
       sorting: true,
       defaultSorting: 'name asc',
-      selecting: true,
-      multiselect: true,
-      selectingCheckboxes: true,
       actions: {
         listAction: 'GET>/api/banks/',
         createAction: 'POST>/api/banks/',
@@ -185,9 +179,6 @@
       pageSize: 20,
       sorting: true,
       defaultSorting: 'code asc',
-      selecting: true,
-      multiselect: true,
-      selectingCheckboxes: true,
       actions: {
         listAction: 'GET>/api/kekvs/',
         createAction: 'POST>/api/kekvs/',
@@ -217,9 +208,6 @@
       pageSize: 20,
       sorting: true,
       defaultSorting: 'institution_id asc',
-      selecting: true,
-      multiselect: true,
-      selectingCheckboxes: true,
       actions: {
         listAction: 'GET>/api/estimates/',
         createAction: 'POST>/api/estimates/',
@@ -257,9 +245,6 @@
       pageSize: 20,
       sorting: true,
       defaultSorting: 'order_date desc',
-      selecting: true,
-      multiselect: true,
-      selectingCheckboxes: true,
       actions: {
         listAction: 'GET>/api/payment_orders/',
         createAction: 'POST>/api/payment_orders/',
@@ -292,7 +277,116 @@
           width: '27.5%'
         }
       }
-    }
+    },
+    money_spent: {
+      id: '#money_spent_table',
+      title: 'Витрати коштів',
+      ajaxSettings: ajaxSettings,
+      paging: true,
+      pageSize: 20,
+      sorting: true,
+      defaultSorting: 'institution_name asc',
+      actions: {
+        listAction: 'GET>/api/money_spent/',
+      },
+      fields: {
+        institution_name: {
+          title: 'Назва установи',
+          width: '33%'
+        },
+        money_spent: {
+          title: 'Витрачено коштів',
+          width: '33%'
+        },
+        years_working: {
+          title: 'Тривалість роботи, роки',
+          width: '20%'
+        }
+      }
+    },
+    payment_orders_nice: {
+      id: '#payment_orders_nice_table',
+      title: 'Витрати коштів',
+      ajaxSettings: ajaxSettings,
+      paging: true,
+      pageSize: 20,
+      sorting: true,
+      defaultSorting: 'institution_name asc',
+      actions: {
+        listAction: 'GET>/api/payment_orders_nice/',
+      },
+      fields: {
+        institution_name: {
+          title: 'Назва установи',
+          width: '33%'
+        },
+        money: {
+          title: 'Витрачено коштів',
+          width: '33%'
+        },
+        order_date: {
+          title: 'Дата складання',
+          width: '20%'
+        },
+        kekv_code: {
+          title: 'КЕКв'
+        },
+        bank_name: {
+          title: 'Назва банку'
+        }
+      }
+    },
+    rest_estimates: {
+      id: '#rest_estimates_table',
+      title: 'Залишки грошей',
+      ajaxSettings: ajaxSettings,
+      paging: true,
+      pageSize: 20,
+      sorting: true,
+      defaultSorting: 'institution_name asc',
+      actions: {
+        listAction: 'GET>/api/rest_estimates/',
+      },
+      fields: {
+        institution_name: {
+          title: 'Назва установи',
+          width: '33%'
+        },
+        kekv_code: {
+          title: 'КЕКв',
+          width: '13%'
+        },
+        year: {
+          title: 'Рік',
+          width: '15%'
+        },
+        rest: {
+          title: 'Залишок грошей, грн'
+        }
+      }
+    },
+    institution_years_working: {
+      id: '#institution_years_working_table',
+      title: 'Тривалість роботи установ',
+      ajaxSettings: ajaxSettings,
+      paging: true,
+      pageSize: 20,
+      sorting: true,
+      defaultSorting: 'institution_name asc',
+      actions: {
+        listAction: 'GET>/api/institution_years_working/',
+      },
+      fields: {
+        institution_name: {
+          title: 'Назва установи',
+          width: '60%'
+        },
+        years_working: {
+          title: 'Тривалість роботи, роки',
+          width: '40%'
+        }
+      }
+    },
   }
 
   $(document).ready(function () {
