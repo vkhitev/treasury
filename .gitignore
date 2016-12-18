@@ -46,4 +46,4 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-db_queries/*.dump
+db_queries/dumps/*.sql
