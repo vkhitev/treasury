@@ -221,6 +221,27 @@
         </div>
       </div>
     </div>
+
+    <br/>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <hr class="star-primary">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 portfolio-item">
+          <a href="#modal_report" id="report-img" class="portfolio-link" data-toggle="modal" onclick="loadTable('#report')">
+            <div class="caption">
+              <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+              </div>
+            </div>
+            <img src="img/portfolio/report.png" class="img-responsive" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- About Section -->
@@ -563,6 +584,37 @@
     </div>
   </div>
 
+  <div class="portfolio-modal modal fade" id="modal_report" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+      <div class="close-modal" data-dismiss="modal">
+        <div class="lr">
+          <div class="rl">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+              <h2>Звіт по всім бюджетним установам</h2>
+              <hr class="star-primary">
+              <div class="filtering">
+                <form>
+                    З дати: <input type="datetime-local" name="start" id="start"/>
+                     по дату: <input type="datetime-local" name="end" id="end"/>
+                    <button type="submit" id="LoadRecordsButton">Оновити дані</button>
+                </form>
+              </div>
+              <div id="report"></div>
+              <br />
+              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- jQuery -->
   <script src="/js/jquery/jquery.min.js"></script>
 
@@ -588,6 +640,7 @@
 
   <!-- Tables JavaScript -->
   <script src="/js/tables.js"></script>
+  <script src="/js/report.js"></script>
 
 </body>
 

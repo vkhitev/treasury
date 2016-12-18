@@ -397,5 +397,9 @@
 }(jQuery))
 
 function loadTable (name) {
-  $(name).jtable('load')
+  if (name !== 'report') {
+    $(name).jtable('load')
+  } else {
+    $('#LoadRecordsButton').click();
+  }
 }

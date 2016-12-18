@@ -13,4 +13,23 @@
 .jtable-bottom-panel select {
   color: black; }
 
+#report-img {
+  max-width: 800px !important; }
+
+.child-opener-image {
+  opacity: 0.5;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 0;
+  margin-bottom: 0 !important; }
+
+.child-opener-image:hover {
+  opacity: 0.7; }
+
+div.filtering {
+  border: 1px solid #999;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #eee; }
+
 /*# sourceMappingURL=style.css.map */
