@@ -193,8 +193,11 @@ function reportInstYear (req, res, next) {
   const id = req.params.institutionid
   const date = req.params.date
 
-  let start = date.replace(/&.+/, '')
-  let end = date.replace(/.+&/, '')
+  const splitted = date.split('&')
+  let start = splitted[0]
+  let end = splitted[1]
+  let year = splitted[2]
+  console.log(start, end, year)
 
   const { jtSorting, jtStartIndex, jtPageSize } = req.query
 
@@ -206,6 +209,7 @@ function reportInstYear (req, res, next) {
 
   start = start || '1900-01-01'
   end = end || '2100-01-01'
+  year = year || 2016
 
   const query = `
   select
@@ -220,6 +224,7 @@ function reportInstYear (req, res, next) {
   	on b.id = p.bank_id
   where
   	p.institution_id = ${id} and
+    extract(year from p.order_date) = ${year} and
     p.order_date between
     cast('${start}' as date) and
     cast('${end}' as date)

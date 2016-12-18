@@ -87,7 +87,7 @@
                           sorting: true,
                           defaultSorting: 'order_date asc',
                           actions: {
-                            listAction: 'GET>/api/report/' + instData.record.id + '/' + $('#start').val() + '&' + $('#end').val()
+                            listAction: 'GET>/api/report/' + instData.record.id + '/' + $('#start').val() + '&' + $('#end').val() + '&' + yearData.record.year
                           },
                           fields: {
                             order_date: {
