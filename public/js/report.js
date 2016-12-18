@@ -43,7 +43,7 @@
       ajaxSettings: ajaxSettings,
       paging: true,
       pageSize: 20,
-      sorting: false,
+      sorting: true,
       defaultSorting: 'name asc',
       actions: {
         listAction: 'GET>/api/report/'
@@ -56,7 +56,7 @@
         details: {
           width: '5%',
           title: '',
-          sorting: false,
+          sorting: true,
           edit: false,
           create: false,
           display: function (instData) {
@@ -92,22 +92,22 @@
                           fields: {
                             order_date: {
                               title: 'Дата',
-                              width: '30%',
+                              width: '25%',
                               display: function (data) {
                                 return data.record.order_date.replace('T', ' ').replace(':00.000Z', '')
                               }
                             },
                             code: {
                               title: 'Кекв',
-                              width: '20%'
+                              width: '25%'
                             },
                             money: {
-                              title: 'Грошей видано',
-                              width: '20%'
+                              title: 'Грошей видано, грн',
+                              width: '25%'
                             },
                             name: {
                               title: 'Банк',
-                              width: '30%'
+                              width: '25%'
                             }
                           }
                         }, function (data) {
@@ -126,7 +126,7 @@
                     width: '31%'
                   },
                   total_money: {
-                    title: 'Грошей видано',
+                    title: 'Грошей видано, грн',
                     width: '31%'
                   }
                 }
@@ -148,7 +148,7 @@
           width: '25%'
         },
         total_money: {
-          title: 'Грошей видано',
+          title: 'Грошей видано, грн',
           width: '25%'
         }
       }
