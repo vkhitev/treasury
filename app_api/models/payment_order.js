@@ -45,6 +45,10 @@ module.exports = function (sequelize, DataTypes) {
       get: function () {
         return this.getDataValue('order_date').toLocaleDateString()
       }
+    },
+    order_number: {
+      type: DataTypes.INTEGER(10),
+      allowNull: false
     }
   }, {
     tableName: 'payment_order'

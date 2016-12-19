@@ -256,25 +256,29 @@
           key: true,
           list: false
         },
+        order_number: {
+          title: 'Номер доручення',
+          width: '20%'
+        },
         kekv_id: {
           title: 'ID КЕКву',
-          width: '15%'
+          width: '20%'
         },
         institution_id: {
           title: 'ID закладу',
-          width: '15%'
+          width: '20%'
         },
         bank_id: {
           title: 'ID банку',
-          width: '15%'
+          width: '20%'
         },
         money: {
-          title: 'Грошей витрачено',
-          width: '27.5%'
+          title: 'Грошей видано',
+          width: '20%'
         },
         order_date: {
           title: 'Дата складання',
-          width: '27.5%'
+          width: '20%'
         }
       }
     },
